@@ -1,0 +1,22 @@
+<h1>New Post</h1>
+<%= form_with model: @post, local: true do |f| %>
+  <% if @post.errors.present? %>
+    <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="form-group">
+    <%= f.label :body, 'Body' %>
+    <%= f.text_area :body, rows: 5 %>
+  </div>
+  <div class="form-controls">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>

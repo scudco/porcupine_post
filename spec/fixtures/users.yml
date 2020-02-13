@@ -1,0 +1,23 @@
+ryan:
+  name: Ryan Dahl
+  email: node4lyfe@example.com
+  expertise: Node
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+rob:
+  name: Rob Pike
+  email: gofarther@example.com
+  expertise: Go
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+dhh:
+  name: DHH,
+  email: magic@example.com
+  expertise: Rails
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+robot:
+  name: Rob Aht
+  email: imhuman@example.com
+  expertise: Digesting organic material to extract nutrients
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

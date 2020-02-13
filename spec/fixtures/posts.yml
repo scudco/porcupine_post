@@ -1,0 +1,27 @@
+<% 100.times do |i| %>
+post_<%= i %>:
+  user: robot
+  title: Post <%= i %>
+  body: A post written by a human to discuss human concerns like living, loving, and laughing.
+  created_at: <%= (i + 1).hours.ago %>
+<% end %>
+
+node:
+  user: ryan
+  title: Node is awesome
+  body: Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+spring:
+  user: ryan
+  title: Spring Boot is cooler
+  body: Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
+
+go:
+  user: rob
+  title: Go is faster
+  body: Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
+
+rails:
+  user: dhh
+  title: "'What about me?' -Rails"
+  body: Ruby on Rails makes it much easier and more fun. It includes everything you need to build fantastic applications, and you can learn it with the support of our large, friendly community.
