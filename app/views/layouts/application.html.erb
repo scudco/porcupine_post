@@ -8,15 +8,19 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-    <% if flash.notice %>
-      <p><%= flash.notice %></p>
-    <% end %>
-    <% if flash.alert %>
-      <p><%= flash.alert %></p>
-    <% end %>
+  <body class="container">
+    <div class="max-w-md mx-auto pb-8">
+      <% if flash.notice %>
+        <p><%= flash.notice %></p>
+      <% end %>
+      <% if flash.alert %>
+        <p><%= flash.alert %></p>
+      <% end %>
 
-    <h1>Welcome to the Porcupine Post</h1>
-    <%= yield %>
+      <h1 class="font-serif text-xl my-8 text-center">
+        <%= link_to 'Welcome to the Porcupine Post', root_path %>
+      </h1>
+      <%= yield %>
+    </div>
   </body>
 </html>

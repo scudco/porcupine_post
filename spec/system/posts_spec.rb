@@ -72,13 +72,13 @@ RSpec.describe "Posts", type: :system do
       expect(page).to have_content('Welcome to the Porcupine Post')
 
       expect(page).to have_content('Node is awesome')
-      expect(page).to have_content('by Ryan Dahl')
+      expect(page).to have_content('by RYAN DAHL')
 
       expect(page).to have_content('Spring Boot is cooler')
-      expect(page).to have_content('by Ryan Dahl')
+      expect(page).to have_content('by RYAN DAHL')
 
       expect(page).to have_content('Go is faster')
-      expect(page).to have_content('by Rob Pike')
+      expect(page).to have_content('by ROB PIKE')
 
       expect(page).to have_content("'What about me?' -Rails")
       expect(page).to have_content('by DHH')
@@ -142,12 +142,12 @@ RSpec.describe "Posts", type: :system do
     it 'shows a list of a user’s posts' do
       user = users(:robot)
       visit '/'
-      within(first('.post-card', text: user.name)) do
+      within(first('.post-card', text: user.name.upcase)) do
         click_on user.name
       end
 
       expect(page).to have_current_path(user_path(user))
-      expect(page).to_not have_content(users(:dhh).name)
+      expect(page).to_not have_content(users(:dhh).name.upcase)
       most_recent_post = user.posts.order(:created_at).last
       click_on most_recent_post.title
       expect(page).to have_current_path(post_path(most_recent_post))

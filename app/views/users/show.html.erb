@@ -1,9 +1,4 @@
+<h1 class="text-lg mb-8">Posts by <%= @user.name %></h1>
 <% @posts.each do |post| %>
-  <div class="post-card">
-    <h2>
-      <%= link_to post.title, post %>
-    </h2>
-    <p>by <%= link_to post.user.name, post.user %></p>
-    <p><%= time_ago_in_words(post.created_at) %> ago</p>
-  </div>
+  <%= render 'posts/card', post: post %>
 <% end %>

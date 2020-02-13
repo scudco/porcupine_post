@@ -11,7 +11,7 @@ rob:
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 dhh:
-  name: DHH,
+  name: DHH
   email: magic@example.com
   expertise: Rails
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
